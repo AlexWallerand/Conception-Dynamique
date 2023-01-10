@@ -22,4 +22,11 @@ public abstract class Annonce {
 		this.nom = nom;
 		this.typeAnnonce = typeAnnonce;
 	}
+
+	@Override
+	public String toString() {
+		return  typeAnnonce + " :\n" +
+				nom + "\n" +
+				description + "\n";
+	}
 }

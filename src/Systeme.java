@@ -14,12 +14,13 @@ public class Systeme {
 		listeAnnonces.add(annonce);
 	}
 
-	public void creerUtilisateur(String nom, String email, String mdp) {
+	public Utilisateur creerUtilisateur(String nom, String email, String mdp) {
 		Utilisateur utilisateur = new Utilisateur(nom, email, mdp);
 		addUtilisateur(utilisateur);
+		return utilisateur;
 	}
 
-	public void creerAnnonce(Utilisateur utilisateur, String typeAnnonce, String typePrestation, String description, String nom){
+	public Annonce creerAnnonce(Utilisateur utilisateur, String typeAnnonce, String typePrestation, String description, String nom){
 		TypeAnnonce typeA = null;
 		switch (typeAnnonce) {
 			case "demande" -> typeA = TypeAnnonce.demande;
@@ -28,6 +29,7 @@ public class Systeme {
 		Annonce annonce = annonceFactory.creerAnnonce(typeA, typePrestation, description, nom);
 		addAnnonce(annonce);
 		utilisateur.addAnnonce(annonce);
+		return annonce;
 	}
 	
 	public void getFilAnnonces(TypeAnnonce typeAnnonce, String typePresation) {
@@ -41,7 +43,9 @@ public class Systeme {
 			if (a.getTypeAnnonce() == typeAnnonce){
 				annonces.add(a);
 			}
-		System.out.println(annonces);
+		for(Annonce annonce : annonces){
+			System.out.println(annonce);
+		}
 	}
 
 	public void getFilAnnonces(String typePresation) {
