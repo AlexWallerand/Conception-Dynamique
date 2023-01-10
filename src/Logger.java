@@ -1,2 +1,6 @@
-public class Logger {
+public class Logger implements Listener{
+    @Override
+    public void onEvent(int Event) {
+
+    }
 }
