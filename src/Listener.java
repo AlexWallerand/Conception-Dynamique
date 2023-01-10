@@ -1,9 +1,10 @@
+import java.util.EventObject;
 public interface Listener {
 
 	/**
 	 * 
-	 * @param Event
+	 * @param event
 	 */
-	void onEvent(int Event);
+	void onEvent(EventObject event);
 
 }

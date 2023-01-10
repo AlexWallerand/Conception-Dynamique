@@ -1,10 +1,11 @@
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Service extends Annonce {
 
-	private Map<LocalDate, LocalDate> disponibilite;
+	private Map<LocalDate, LocalDate> disponibilite = new HashMap<>();
 
 	public Map<LocalDate, LocalDate> getDisponibilite() {
 		return disponibilite;

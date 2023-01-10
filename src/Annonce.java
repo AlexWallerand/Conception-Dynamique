@@ -16,7 +16,6 @@ public abstract class Annonce {
 		return typeAnnonce;
 	}
 
-
 	public Annonce(String description, String nom, TypeAnnonce typeAnnonce) {
 		this.description = description;
 		this.nom = nom;
@@ -29,4 +28,6 @@ public abstract class Annonce {
 				nom + "\n" +
 				description + "\n";
 	}
+
+
 }

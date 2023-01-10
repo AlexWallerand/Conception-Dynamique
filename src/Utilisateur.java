@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.EventObject;
 
 public class Utilisateur implements Listener{
 
@@ -35,14 +36,28 @@ public class Utilisateur implements Listener{
 		return listePrestations;
 	}
 
+	public ArrayList<Annonce> getAnnonces(){
+		ArrayList<Annonce> listeAnnonces = listeDemandes;
+		listeAnnonces.addAll(listePrestations);
+		return listeAnnonces;
+	}
+
+	public void afficherAnnonces(){
+		ArrayList<Annonce> listeAnnonces = getAnnonces();
+		for (Annonce annonce : listeAnnonces) {
+			System.out.println(annonce);
+		}
+	}
+
 	public Utilisateur(String nom, String email, String mdp) {
 		this.nom = nom;
 		this.email = email;
 		this.mdp = mdp;
 	}
 
+
 	@Override
-	public void onEvent(int Event) {
+	public void onEvent(EventObject event) {
 
 	}
 }

@@ -1,6 +1,9 @@
+import java.util.EventObject;
+
 public class Logger implements Listener{
+
     @Override
-    public void onEvent(int Event) {
+    public void onEvent(EventObject event) {
 
     }
 }

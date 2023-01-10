@@ -29,12 +29,17 @@ public class Systeme {
 		Annonce annonce = annonceFactory.creerAnnonce(typeA, typePrestation, description, nom);
 		addAnnonce(annonce);
 		utilisateur.addAnnonce(annonce);
-		return annonce;
-	}
-	
-	public void getFilAnnonces(TypeAnnonce typeAnnonce, String typePresation) {
+        return annonce;
+    }
 
-
+	public void getFilAnnonces(TypeAnnonce typeAnnonce, String typePrestation) {
+		ArrayList<Annonce> annonces = new ArrayList<>();
+		for(Annonce a : listeAnnonces)
+			if ((a.getTypeAnnonce() == typeAnnonce)&&(a.getClass().getName().equals(typePrestation))){
+				annonces.add(a);
+			}
+		for(Annonce annonce : annonces)
+			System.out.println(annonce);
 	}
 
 	public void getFilAnnonces(TypeAnnonce typeAnnonce) {
@@ -43,17 +48,23 @@ public class Systeme {
 			if (a.getTypeAnnonce() == typeAnnonce){
 				annonces.add(a);
 			}
-		for(Annonce annonce : annonces){
+		for(Annonce annonce : annonces)
 			System.out.println(annonce);
-		}
 	}
 
-	public void getFilAnnonces(String typePresation) {
-
+	public void getFilAnnonces(String typePrestation) {
+		ArrayList<Annonce> annonces = new ArrayList<>();
+		for(Annonce a : listeAnnonces)
+			if (a.getClass().getName().equals(typePrestation)){
+				annonces.add(a);
+			}
+		for(Annonce annonce : annonces)
+			System.out.println(annonce);
 	}
 
 	public void getFilAnnonces() {
-		System.out.println(listeAnnonces);
+		for(Annonce annonce : listeAnnonces)
+			System.out.println(annonce);
 	}
 	
 
